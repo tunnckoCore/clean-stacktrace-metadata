@@ -10,7 +10,7 @@
 [![dependency status][david-img]][david-url]
 [![paypal donate][paypalme-img]][paypalme-url] 
 
-You might also be interested in [always-done](https://github.com/hybridables/always-done#readme).
+You might also be interested in [clean-stacktrace](https://github.com/tunnckocore/clean-stacktrace#readme).
 
 ## Table of Contents
 - [Install](#install)
@@ -52,7 +52,7 @@ const cleanStacktraceMetadata = require('clean-stacktrace-metadata')
 - [assert-kindof](https://www.npmjs.com/package/assert-kindof): Check native type of value and throw AssertionError if not okey. Clean stack traces. Simplicity. Built on [is-kindof][]. | [homepage](https://github.com/tunnckocore/assert-kindof#readme "Check native type of value and throw AssertionError if not okey. Clean stack traces. Simplicity. Built on [is-kindof][].")
 - [clean-stack](https://www.npmjs.com/package/clean-stack): Clean up error stack traces | [homepage](https://github.com/sindresorhus/clean-stack#readme "Clean up error stack traces")
 - [clean-stacktrace-relative-paths](https://www.npmjs.com/package/clean-stacktrace-relative-paths): Meant to be used with [clean-stacktrace][] as mapper function. Makes absolute paths inside stack traces to relative paths. | [homepage](https://github.com/tunnckocore/clean-stacktrace-relative-paths#readme "Meant to be used with [clean-stacktrace][] as mapper function. Makes absolute paths inside stack traces to relative paths.")
-- [clean-stacktrace](https://www.npmjs.com/package/clean-stacktrace): Clean up error stack traces - just a fork of [clean-stack][]. Working on node.js v0.10 and above. | [homepage](https://github.com/tunnckocore/clean-stacktrace#readme "Clean up error stack traces - just a fork of [clean-stack][]. Working on node.js v0.10 and above.")
+- [clean-stacktrace](https://www.npmjs.com/package/clean-stacktrace): Clean up error stack traces from node internals | [homepage](https://github.com/tunnckocore/clean-stacktrace#readme "Clean up error stack traces from node internals")
 - [is-kindof](https://www.npmjs.com/package/is-kindof): Check type of given javascript value. Support promises, generators, streams, and native types. Built on [kind-of][] lib. | [homepage](https://github.com/tunnckocore/is-kindof#readme "Check type of given javascript value. Support promises, generators, streams, and native types. Built on [kind-of][] lib.")
 - [minibase](https://www.npmjs.com/package/minibase): Minimalist alternative for Base. Build complex APIs with small units called plugins. Works well with most of the already existing… [more](https://github.com/node-minibase/minibase#readme) | [homepage](https://github.com/node-minibase/minibase#readme "Minimalist alternative for Base. Build complex APIs with small units called plugins. Works well with most of the already existing [base][] plugins.")
 - [stacktrace-metadata](https://www.npmjs.com/package/stacktrace-metadata): Modify given `err` object to be more useful. Adds `line`, `column` and `filename` properties. | [homepage](https://github.com/tunnckocore/stacktrace-metadata#readme "Modify given `err` object to be more useful. Adds `line`, `column` and `filename` properties.")

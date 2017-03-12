@@ -82,7 +82,7 @@
         "assert-kindof",
         "is-kindof"
       ],
-      "highlight": "always-done"
+      "highlight": "clean-stacktrace"
     },
     "lint": {
       "reflinks": true
