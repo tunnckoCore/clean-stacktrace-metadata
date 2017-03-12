@@ -39,11 +39,6 @@
       "path": "./node_modules/cz-conventional-changelog"
     }
   },
-  "standard": {
-    "ignore": [
-      "dist/**"
-    ]
-  },
   "verb": {
     "run": true,
     "toc": {
