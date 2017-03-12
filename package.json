@@ -33,7 +33,24 @@
   "files": [
     "index.js"
   ],
-  "keywords": [],
+  "keywords": [
+    "api",
+    "clean",
+    "clean-stack",
+    "clean-stacktrace",
+    "cleanstack",
+    "errors",
+    "info",
+    "map",
+    "mapper",
+    "meta",
+    "metadata",
+    "plugin",
+    "stack",
+    "stacktrace",
+    "trace",
+    "utils"
+  ],
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
