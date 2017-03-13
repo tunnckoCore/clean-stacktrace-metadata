@@ -1,6 +1,6 @@
 {
   "name": "clean-stacktrace-metadata",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Plugin for `clean-stacktrace` lib. Parse each line to get additional info like `filename`, `column` and `line` of the error.",
   "repository": "tunnckoCore/clean-stacktrace-metadata",
   "author": "Charlike Mike Reagent <@tunnckoCore> (https://i.am.charlike.online)",
