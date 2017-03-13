@@ -94,9 +94,9 @@ module.exports = function cleanStacktraceMetadata (plugin) {
 
     var filepath = m[2].slice(-1) === ')' ? m[2].slice(0, -1) : m[2]
     var parsed = parseFilepath(pathNormalize(filepath))
-    var dirname = parsed.dirname
-    var parts = parsed.basename.split(':')
-    var filename = path.join(dirname, parts[0])
+    var dirname = pathNormalize(parsed.dirname)
+    var parts = pathNormalize(parsed.basename).split(':')
+    var filename = pathNormalize(path.join(dirname, parts[0]))
 
     var info = {
       line: Number(parts[1] || 0),
