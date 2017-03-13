@@ -25,6 +25,28 @@ test('clean-stacktrace-metadata', function (done) {
   done()
 })
 
+test('should work for windows paths', function (done) {
+  cleanStacktraceMetadata(function plugin (line, info) {
+    test.strictEqual(info.place, 'Test.fn')
+    test.strictEqual(info.filename, 'C:/projects/stacktrace-metadata/test.js')
+    test.strictEqual(info.line, 53)
+    test.strictEqual(info.column, 15)
+  })('at Test.fn (C:\\projects\\stacktrace-metadata\\test.js:53:15)')
+  done()
+})
+
+test('should work when not defined line and column', function (done) {
+  function plugin (line, info) {
+    test.strictEqual(info.line, 0)
+    test.strictEqual(info.column, 0)
+    test.strictEqual(info.place, 'quxie')
+    test.strictEqual(info.filename, '/home/projects/stacktrace-metadata/test.js')
+  }
+  var line = 'at quxie /home/projects/stacktrace-metadata/test.js'
+  cleanStacktraceMetadata(plugin)(line)
+  done()
+})
+
 test('should throw TypeError if `plugin` is not a function', function (done) {
   function fixture () {
     cleanStacktraceMetadata()

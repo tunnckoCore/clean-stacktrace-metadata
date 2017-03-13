@@ -7,6 +7,10 @@
 
 'use strict'
 
+var path = require('path')
+var parseFilepath = require('parse-filepath')
+var pathNormalize = require('normalize-path')
+
 /**
  * > Parses each line in stack and pass `info` object
  * to the given `plugin` function.
@@ -77,17 +81,27 @@ module.exports = function cleanStacktraceMetadata (plugin) {
   }
 
   return function onEachLine (line, index) {
-    if (!/at/.test(line)) return line
+    if (!/at/.test(line)) {
+      return line
+    }
 
-    var m = line.match(/at (.+) \(?([^:\s]+):(\d+):?(\d+)?\)?$/)
+    var m = line.match(/at (.+) \(?(.+)\)?$/)
 
     /* istanbul ignore next */
-    if (!m) return line
+    if (!m) {
+      return line
+    }
+
+    var filepath = m[2].slice(-1) === ')' ? m[2].slice(0, -1) : m[2]
+    var parsed = parseFilepath(pathNormalize(filepath))
+    var dirname = parsed.dirname
+    var parts = parsed.basename.split(':')
+    var filename = path.join(dirname, parts[0])
 
     var info = {
-      line: Number(m[3]),
-      column: Number(m[4]),
-      filename: String(m[2]),
+      line: Number(parts[1] || 0),
+      column: Number(parts[2] || 0),
+      filename: String(filename),
       place: String(m[1])
     }
 

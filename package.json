@@ -19,7 +19,10 @@
     "git:cz": "git-cz",
     "commit": "npm-run-all -s test git"
   },
-  "dependencies": {},
+  "dependencies": {
+    "normalize-path": "^2.0.1",
+    "parse-filepath": "^1.0.1"
+  },
   "devDependencies": {
     "commitizen": "~2.7.0",
     "cz-conventional-changelog": "1.1.5",
