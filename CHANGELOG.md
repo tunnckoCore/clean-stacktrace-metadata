@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.0.3"></a>
+## [1.0.3](https://github.com/tunnckocore/clean-stacktrace-metadata/compare/v1.0.2...v1.0.3) (2017-03-17)
+
+
+### Bug Fixes
+
+* **at:** fix "at" when no "place" and just "at /full/abs/fp.js:3:1" ([a30791c](https://github.com/tunnckocore/clean-stacktrace-metadata/commit/a30791c))
+* **deps:** bump mukla to latest ([94cb737](https://github.com/tunnckocore/clean-stacktrace-metadata/commit/94cb737))
+
+
+
 <a name="1.0.2"></a>
 ## [1.0.2](https://github.com/tunnckocore/clean-stacktrace-metadata/compare/v1.0.1...v1.0.2) (2017-03-13)
 
