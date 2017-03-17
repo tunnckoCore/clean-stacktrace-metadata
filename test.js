@@ -46,6 +46,16 @@ test('should work when not defined line and column', function (done) {
   cleanStacktraceMetadata(plugin)(line)
   done()
 })
+test('should work when not place defined', function (done) {
+  function plugin (line, info) {
+    test.strictEqual(info.line, 33)
+    test.strictEqual(info.column, 2)
+    test.strictEqual(info.place, '')
+    test.strictEqual(info.filename, '/home/foo/test.js')
+  }
+  cleanStacktraceMetadata(plugin)('at /home/foo/test.js:33:2')
+  done()
+})
 
 test('should throw TypeError if `plugin` is not a function', function (done) {
   function fixture () {

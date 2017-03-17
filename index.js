@@ -85,24 +85,28 @@ module.exports = function cleanStacktraceMetadata (plugin) {
       return line
     }
 
-    var m = line.match(/at (.+) \(?(.+)\)?$/)
-
+    var m = /at\s+([^\s/]+)?\s?(.*)$/.exec(line)
+    // var m = line.match(/at (.+) \(?(.+)\)?$/)
     /* istanbul ignore next */
     if (!m) {
       return line
     }
+    m = m.filter(Boolean)
 
-    var filepath = m[2].slice(-1) === ')' ? m[2].slice(0, -1) : m[2]
+    var filepath = (m.length === 3 ? m[2] : m[1])
+      .replace(/^\(/, '')
+      .replace(/\)$/, '')
+
     var parsed = parseFilepath(pathNormalize(filepath))
     var dirname = pathNormalize(parsed.dirname)
     var parts = pathNormalize(parsed.basename).split(':')
     var filename = pathNormalize(path.join(dirname, parts[0]))
 
     var info = {
-      line: Number(parts[1] || 0),
-      column: Number(parts[2] || 0),
-      filename: String(filename),
-      place: String(m[1])
+      line: +parts[1] || 0,
+      column: +parts[2] || 0,
+      filename: '' + filename,
+      place: m.length === 3 ? m[1] : ''
     }
 
     return plugin(line, info, index) || line
