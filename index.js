@@ -85,15 +85,19 @@ module.exports = function cleanStacktraceMetadata (plugin) {
       return line
     }
 
-    var m = /at\s+([^\s/]+)?\s?(.*)$/.exec(line)
-    // var m = line.match(/at (.+) \(?(.+)\)?$/)
-    /* istanbul ignore next */
-    if (!m) {
-      return line
-    }
-    m = m.filter(Boolean)
+    var tmp = line.replace(/at\s+/, '')
+    var idx = tmp.indexOf(' ')
+    var place = ''
+    var filepath = ''
 
-    var filepath = (m.length === 3 ? m[2] : m[1])
+    if (idx > 0) {
+      place = tmp.slice(0, idx)
+      filepath = tmp.slice(idx + 1)
+    } else {
+      filepath = tmp
+    }
+
+    filepath = filepath
       .replace(/^\(/, '')
       .replace(/\)$/, '')
 
@@ -105,8 +109,8 @@ module.exports = function cleanStacktraceMetadata (plugin) {
     var info = {
       line: +parts[1] || 0,
       column: +parts[2] || 0,
-      filename: '' + filename,
-      place: m.length === 3 ? m[1] : ''
+      filename: filename,
+      place: place
     }
 
     return plugin(line, info, index) || line
