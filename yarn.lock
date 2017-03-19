@@ -21,13 +21,17 @@ acorn-object-spread@^1.0.0:
   dependencies:
     acorn "^3.1.0"
 
-acorn@4.0.4, acorn@^4.0.1:
+acorn@4.0.4:
   version "4.0.4"
   resolved "https://registry.yarnpkg.com/acorn/-/acorn-4.0.4.tgz#17a8d6a7a6c4ef538b814ec9abac2779293bf30a"
 
 acorn@^3.0.4, acorn@^3.1.0, acorn@^3.3.0:
   version "3.3.0"
   resolved "https://registry.yarnpkg.com/acorn/-/acorn-3.3.0.tgz#45e37fb39e8da3f25baee3ff5369e2bb5f22017a"
+
+acorn@^4.0.1:
+  version "4.0.11"
+  resolved "https://registry.yarnpkg.com/acorn/-/acorn-4.0.11.tgz#edcda3bd937e7556410d42ed5860f67399c794c0"
 
 ajv-keywords@^1.0.0:
   version "1.5.1"
@@ -362,12 +366,9 @@ circular-json@^0.3.1:
   version "0.3.1"
   resolved "https://registry.yarnpkg.com/circular-json/-/circular-json-0.3.1.tgz#be8b36aefccde8b3ca7aa2d6afc07a37242c0d2d"
 
-clean-stacktrace-metadata@^1.0.4:
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/clean-stacktrace-metadata/-/clean-stacktrace-metadata-1.0.4.tgz#06f71c84788ecc90562a5c37a01773188d7f6ff0"
-  dependencies:
-    normalize-path "^2.0.1"
-    parse-filepath "^1.0.1"
+clean-stacktrace-metadata@^1.0.5:
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/clean-stacktrace-metadata/-/clean-stacktrace-metadata-1.0.5.tgz#cb4ed6eb39f7eb3dbab72652793a2db5394b97b7"
 
 clean-stacktrace-relative-paths@^1.0.3:
   version "1.0.4"
@@ -3028,11 +3029,11 @@ stack-utils-node-internals@^1.0.1:
   resolved "https://registry.yarnpkg.com/stack-utils-node-internals/-/stack-utils-node-internals-1.0.1.tgz#ab4a8a469b6cbec72b0bfb589df5e28b1d12281f"
 
 stacktrace-metadata@^2.0.1:
-  version "2.0.2"
-  resolved "https://registry.yarnpkg.com/stacktrace-metadata/-/stacktrace-metadata-2.0.2.tgz#dbd7c82b69508958f7e03ab2ad6f376a651ac7ff"
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/stacktrace-metadata/-/stacktrace-metadata-2.0.3.tgz#506fd35ac8595e8f2ec0e234f23317e8b865780d"
   dependencies:
     clean-stacktrace "^1.1.0"
-    clean-stacktrace-metadata "^1.0.4"
+    clean-stacktrace-metadata "^1.0.5"
     clean-stacktrace-relative-paths "^1.0.3"
     extend-shallow "^2.0.1"
     find-callsite "^1.1.3"
