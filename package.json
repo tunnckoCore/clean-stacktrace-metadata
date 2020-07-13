@@ -41,7 +41,7 @@
     "rollup-plugin-commonjs": "^8.0.2",
     "rollup-plugin-node-resolve": "^2.0.0",
     "standard": "^9.0.0",
-    "standard-version": "^4.0.0"
+    "standard-version": "^8.0.1"
   },
   "files": [
     "index.js",
